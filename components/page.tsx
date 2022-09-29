@@ -11,9 +11,10 @@ type PageProps = {
 const footerLinks = [
   { name: 'Home', url: '/' },
   { name: 'GitHub', url: 'https://github.com/xurenlu', target: '_blank' },
-
+    { name: 'Twitter', url: 'https://twitter.com/162cm', target: '_blank' },
   { name: 'Blog', url: '/blog' },
   { name: 'unhtml', url: 'https://unhtml.com', target: '_blank' },
+    { name: 'ip4.dev', url: 'https://ip4.dev', target: '_blank' },
   { name: '知乎', url: 'https://www.zhihu.com/people/162cm', target: '_blank' },
   { name: 'About', url: '/about' },
   { name: '微博', url: 'https://weibo.com/u/1165778465', target: '_blank' },
