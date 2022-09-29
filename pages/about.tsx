@@ -10,7 +10,7 @@ const About = (): JSX.Element => {
     target: '_blank',
     rel: 'noopener noreferrer',
   }
-  const seoTitle = 'About Nickbing Lao'
+  const seoTitle = 'About renlu.xu '
   return (
     <Page>
       <NextSeo
