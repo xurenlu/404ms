@@ -51,7 +51,7 @@ const computedFields: ComputedFields = {
   },
   summary: {
     type: 'string',
-    resolve: doc =>  doc.substring(0,30)+"..."
+    resolve: doc =>  "请阅读全文..." //.substring(0,30)+"..."
   },
   slug: {
     type: 'string',
