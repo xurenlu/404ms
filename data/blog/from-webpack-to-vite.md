@@ -1,6 +1,7 @@
 ---
 title: 从webpack迁移到vite
 date: 2022-09-25 21:09:00
+tags: []
 ---
 
 上周计划将一个旧项目从webpack迁移到vite,遇到了一点点问题，特地记录下解决方法。

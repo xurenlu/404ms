@@ -59,8 +59,8 @@ export const getStaticProps: GetStaticProps = async context => {
     // .filter(post => post.tags?.some(x => slugify(x, { lower: true }) === context.params.slug))
     .filter(post => post.tags?.some(x => x === context.params.slug))
     .filter(Boolean)
-    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-    .map(post => pick(post, ['slug', 'title', 'summary', 'publishedAt', 'image', 'readingTime']))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .map(post => pick(post, ['slug', 'title', 'summary', 'date', 'image', 'readingTime','y','m','d']))
   return { props: { posts } }
 }
 

@@ -2,14 +2,13 @@ import Link from 'next/link'
 import ThemeChanger from 'components/themechanger'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import avatar from 'public/avatar.png'
+import avatar from 'public/renlu_avatar.png'
 import styles from './header.module.scss'
 
 const links = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Blog', path: '/blog' },
-  { name: 'Map', path: 'http://map.giscafer.com', target: '_blank' },
+  { name: 'Home', path: '/' ,target:""},
+  { name: 'Blog', path: '/blog' ,target:""},
+  { name: 'About', path: '/about' ,target:""},
 ]
 
 const Header = (): JSX.Element => {
@@ -21,12 +20,13 @@ const Header = (): JSX.Element => {
         <div className={styles.container}>
           <Link href="/">
             <a className={styles.logo}>
-              <Image src={avatar} alt="Nickbing Lao" layout="fixed" width="45" height="45" priority placeholder="blur" />
+              <Image src={avatar} alt="alex " layout="fixed" width="45" height="45" priority placeholder="blur" />
             </a>
           </Link>
           <nav className={styles.nav}>
             <ol className={styles.links}>
-              {links.map(({ name, path, target }) => {
+              {links.map(({ name, path, target:string }) => {
+                let target;
                 if (target === '_blank') {
                   return (
                     <li key={path} className={pathname === path ? styles.linkActive : styles.link}>

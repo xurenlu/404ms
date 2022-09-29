@@ -16,7 +16,7 @@ const getCoverImg = doc => {
 }
 
 const getSlug = doc => {
-  const name = doc._raw.sourceFileName.replace(/\.mdx$/, '')
+  const name = doc._raw.sourceFileName.replace(/\.md$/, '')
   return name
 }
 

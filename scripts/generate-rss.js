@@ -6,9 +6,9 @@ const matter = require('gray-matter')
 
 async function generate() {
   const feed = new RSS({
-    title: 'Nickbing Lao',
-    site_url: 'https://giscafer.com',
-    feed_url: 'https://giscafer.com/feed.xml',
+    title: '404.ms blog of alex.X',
+    site_url: 'https://404.ms',
+    feed_url: 'https://404.ms/feed.xml',
   })
 
   const posts = await fs.readdir(path.join(__dirname, '..', 'data', 'blog'))
@@ -17,11 +17,14 @@ async function generate() {
     posts.map(async name => {
       const content = await fs.readFile(path.join(__dirname, '..', 'data', 'blog', name))
       const frontmatter = matter(content)
-
+        const doc = frontmatter.data
+        const y = `${new Date(doc.date).getFullYear()}`;
+        const m =  `${new Date(doc.date).getMonth() + 1}`;
+        const d =  `${new Date(doc.date).getDate()}`;
       feed.item({
         title: frontmatter.data.title,
-        url: 'https://giscafer.com/blog/' + name.replace(/\.mdx?/, ''),
-        date: frontmatter.data.publishedAt,
+        url: 'https://404.ms/' + y +'/' + m + '/' + d + '/' + name.replace(/\.md?/, ''),
+        date: frontmatter.data.date,
         description: frontmatter.data.summary,
       })
     }),

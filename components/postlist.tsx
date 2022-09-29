@@ -19,7 +19,9 @@ const PostList = ({ posts, hideImage = false }: PostListProps): JSX.Element => (
   <ul className={styles.list}>
     {posts.length === 0 && <p className={styles.noResults}>🧐 No posts found</p>}
     {posts.map(post => {
-      const { summary, title, readingTime: readTime, date, image, slug } = post
+
+      const { y, m, d, summary, title, readingTime: readTime, date, image, slug } = post
+
       return (
         <li key={slug}>
           {!hideImage &&
@@ -40,7 +42,7 @@ const PostList = ({ posts, hideImage = false }: PostListProps): JSX.Element => (
                 )}
               </>
             ))}
-          <Link as={`/blog/${slug}`} href="/blog/[slug]">
+          <Link as={`/${y}/${m}/${d}/${slug}`} href={`/${y}/${m}/${d}/${slug}`}>
             <a className={styles.title}>{title}</a>
           </Link>
           {/* TODO: mdx没有summary时智能提取？ */}

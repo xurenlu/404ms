@@ -90,9 +90,9 @@ const Post = ({post, related}: PostProps): JSX.Element => {
         })
         : null
 
-    const seoTitle = `${post.title} | Nickbing Lao`
+    const seoTitle = `${post.title} | renlu.xu`
     const seoDesc = `${post.summary}`
-    const url = `https://giscafer.com/blog/${post.slug}`
+    const url = `https://404.ms/${post.y}/${post.m}/${post.d}/${post.slug}`
 
     return (
         <Page>
@@ -107,19 +107,19 @@ const Post = ({post, related}: PostProps): JSX.Element => {
                     images: [
                         {
                             url: post.og
-                                ? `https://giscafer.com${post.og}`
+                                ? `https://404.ms${post.og}`
                                 : `https://og-image.giscafer.vercel.app/${encodeURIComponent(post.title)}?desc=${encodeURIComponent(
                                     seoDesc,
                                 )}&theme=dark.png`,
                             alt: post.title,
                         },
                     ],
-                    site_name: 'giscafer | Nickbing Lao',
+                    site_name: 'renlu.xu ',
                     type: 'article',
                     article: {
                         publishedTime: post.date,
                         modifiedTime: post.updatedAt,
-                        authors: ['https://giscafer.com'],
+                        authors: ['https://404.ms'],
                     },
                 }}
                 twitter={{
@@ -163,7 +163,6 @@ const Post = ({post, related}: PostProps): JSX.Element => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const paths = allPosts.map(p => ({ params: { slug: p.slug || '404', y: '' + p.y || '2022', m: p.m + '' || '01', d: p.d +'' || '01' } }))
-    console.log(paths)
     return {
         paths: paths,
         //allPosts.map(p => ({ params: { slug: p.slug || '404', y: p.y || '2022', m: p.m || '1', d: p.d || '1' } })),

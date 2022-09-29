@@ -1,7 +1,7 @@
 ---
 title: sonarqube简易上手指南
 date: 2022-02-16 15:04:08
-tags: sonarqube,technological,java,coding
+tags: ['sonarqube','java','coding']
 ---
 
 ### sonarqube 是什么
@@ -14,7 +14,7 @@ Sonarqube 是一个开源的代码质量管理系统,支持超过25种编程语�
 ![https://404.ms/file/xurenlu202202/69928200.5266.png](https://404.ms/file/xurenlu202202/69928200.5266.png)
 
 ### 安装
-可以从 [https://www.sonarqube.org/](https://www.sonarqube.org/) 下载安装版，解压后，执行 bin/{your-platform}/sonar.sh 即可。比如我的是mac,就执行<kbd>bin/macosx-universal-64/sonar.sh</kbd>来启动。
+可以从 [https://www.sonarqube.org/](https://www.sonarqube.org/) 下载安装版，解压后，执行 bin/\{your-platform\}/sonar.sh 即可。比如我的是mac,就执行<kbd>bin/macosx-universal-64/sonar.sh</kbd>来启动。
 
     注意，现在sonarqube需要至少jdk11才能运行。
     

@@ -9,8 +9,10 @@ module.exports = withContentlayer()({
       'cdn.nlark.com',
       'wpimg.wallstcn.com',
       'github.com',
-      'giscafer.com',
+      '404.ms',
       'ww1.sinaimg.cn',
+        'cdn.jsdelivr.net',
+        'unhtml.oss-cn-hongkong.aliyuncs.com'
     ],
     formats: ['image/avif', 'image/webp'],
   },

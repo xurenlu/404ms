@@ -1,7 +1,7 @@
 ---
 title: Nick.Friend.eth 关于初创企业的9个忠告
 date: 2022-06-01 19:13:18
-tags: startup
+tags: ['startup']
 ---
 
 

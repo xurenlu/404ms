@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Page from 'components/page'
 import Button from 'components/button'
 import { NextSeo } from 'next-seo'
-import me from 'public/nicky.png'
+import me from 'public/2702.png'
 import styles from './about.module.scss'
 
 const About = (): JSX.Element => {
@@ -17,8 +17,8 @@ const About = (): JSX.Element => {
         title={seoTitle}
         openGraph={{
           title: seoTitle,
-          url: `https://giscafer.com/about/`,
-          site_name: 'Giscafer.com',
+          url: `https://404.ms/about/`,
+          site_name: '404.ms',
         }}
         twitter={{
           cardType: 'summary_large_image',
@@ -26,35 +26,35 @@ const About = (): JSX.Element => {
       />
       <Image src={me} alt="Picture of me (Nickbing Lao)" placeholder="blur" className={styles.image} priority />
       <div className={styles.text}>
-        <p>Hey I’m Nickbing Lao, a fullstack developer currently living in 🇨🇳 Guangzhou, China.</p>
+        <p>Hey I’m alex , a fullstack developer currently living in 🇨🇳 Shanghai, China.</p>
 
         <p>
-          自驱型前端工程师，8年多大型复杂产品开发经验，4年前端团队管理经验，熟悉跨端APP 如 Ionic、React Native开发，熟悉 微前端、DevOps
-          等，具备全栈开发能力。
+            网页相关的开发工程师，后端熟悉java、php、golang、c、python、ruby，前端熟悉typescript编程，vue/react熟练工。
+            曾就职于CCTV、Yahoo!、Alibaba等企业，曾在Saas领域自主创业两次。
+            创业赔掉了百多万，负债中。
+            目前就职于上海某金融企业，往返杭州、上海两地。
         </p>
         <p>
           对我感兴趣 (可查看{' '}
-          <a href="https://visiky.github.io/resume/?lang=zh_CN&user=giscafer" {...linkProps}>
-            在线简历
-          </a>{' '}
+
           ).
         </p>
         <p>
           <ul>
             <li>
-              <a href="https://github.com/giscafer" {...linkProps}>
+              <a href="https://github.com/xurenlu" {...linkProps}>
                 Github
               </a>
             </li>
             <li>
-              <a href="https://www.zhihu.com/people/giscafer/" {...linkProps}>
-                知乎
+              <a href="https://twitter.com/162cm/" {...linkProps}>
+                Twitter
               </a>
             </li>
           </ul>
         </p>
       </div>
-      <Button href="mailto:giscafer@outlook.com">联系我</Button>
+      <Button href="mailto:next.blog@404.ms">联系我</Button>
     </Page>
   )
 }

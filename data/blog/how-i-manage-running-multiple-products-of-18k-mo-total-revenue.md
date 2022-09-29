@@ -1,7 +1,7 @@
 ---
 title: 我如何管理运行总收入约 18,000 美元/月的多个产品
 date: 2022-08-07 11:30:28
-tags:
+tags: []
 ---
 
 这是一篇译文，原文在:https://www.indiehackers.com/post/how-i-manage-running-multiple-products-of-18k-mo-total-revenue-e5443df3b8
