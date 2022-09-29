@@ -1,4 +1,4 @@
-import { defineDocumentType, makeSource, ComputedFields } from 'contentlayer/source-files' // eslint-disable-line
+import {ComputedFields, defineDocumentType, makeSource} from 'contentlayer/source-files' // eslint-disable-line
 import readingTime from 'reading-time'
 import rehypePrism from 'rehype-prism-plus'
 import codeTitle from 'remark-code-titles'
@@ -16,13 +16,12 @@ const getCoverImg = doc => {
 }
 
 const getSlug = doc => {
-  const name = doc._raw.sourceFileName.replace(/\.md$/, '')
-  return name
+  return doc._raw.sourceFileName.replace(/\.md$/, '')
 }
 
 const getY = doc => `${new Date(doc.date).getFullYear()}`
-const getM = doc => `${new Date(doc.date).getMonth() + 1}`
-const getD = doc => `${new Date(doc.date).getDate()}`
+const getM = doc => new Date(doc.date).getMonth() + 1
+const getD = doc => new Date(doc.date).getDate()
 const computedFields: ComputedFields = {
   y: {
     type: 'string',
@@ -30,15 +29,29 @@ const computedFields: ComputedFields = {
   },
   m: {
     type: 'string',
-    resolve: doc => getM(doc),
+    resolve: doc => {
+      const m = getM(doc)
+      if (m <10) {
+        return '0' + m
+      }else{
+        return `${m}`
+      }
+    }
   },
   d: {
     type: 'string',
-    resolve: doc => getD(doc),
+    resolve: doc => {
+      const d = getD(doc)
+      if (d < 10){
+        return '0'+d
+      }else{
+        return `${d}`
+      }
+    },
   },
   summary: {
     type: 'string',
-    resolve: doc => ("summary...")
+    resolve: doc =>  doc.substring(0,30)+"..."
   },
   slug: {
     type: 'string',
