@@ -19,7 +19,7 @@ const PostList = ({ posts, hideImage = false }: PostListProps): JSX.Element => (
   <ul className={styles.list}>
     {posts.length === 0 && <p className={styles.noResults}>🧐 No posts found</p>}
     {posts.map(post => {
-      const { summary, title, readingTime: readTime, publishedAt, image, slug } = post
+      const { summary, title, readingTime: readTime, date, image, slug } = post
       return (
         <li key={slug}>
           {!hideImage &&
@@ -47,7 +47,7 @@ const PostList = ({ posts, hideImage = false }: PostListProps): JSX.Element => (
           {summary !== '查看全文>>' && <p className={styles.summary}>{summary}</p>}
 
           <p className={styles.meta}>
-            发布于 <time dateTime={publishedAt}>{formatDate(publishedAt)}</time> &middot; 预估阅读 {Math.ceil(readTime.minutes * 1.5)} 分钟
+            发布于 <time dateTime={date}>{formatDate(date)}</time> &middot; 预估阅读 {Math.ceil(readTime.minutes * 1.5)} 分钟
           </p>
         </li>
       )

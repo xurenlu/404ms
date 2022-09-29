@@ -20,7 +20,26 @@ const getSlug = doc => {
   return name
 }
 
+const getY = doc => `${new Date(doc.date).getFullYear()}`
+const getM = doc => `${new Date(doc.date).getMonth() + 1}`
+const getD = doc => `${new Date(doc.date).getDate()}`
 const computedFields: ComputedFields = {
+  y: {
+    type: 'string',
+    resolve: doc => getY(doc),
+  },
+  m: {
+    type: 'string',
+    resolve: doc => getM(doc),
+  },
+  d: {
+    type: 'string',
+    resolve: doc => getD(doc),
+  },
+  summary: {
+    type: 'string',
+    resolve: doc => ("summary...")
+  },
   slug: {
     type: 'string',
     resolve: doc => getSlug(doc),
@@ -39,12 +58,12 @@ const computedFields: ComputedFields = {
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `**/*.md`,
   bodyType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
-    summary: { type: 'string', required: true },
-    publishedAt: { type: 'string', required: true },
+    desc: { type: 'string', required: false },
+    date: { type: 'string', required: true },
     updatedAt: { type: 'string', required: false },
     tags: { type: 'json', required: false },
   },
