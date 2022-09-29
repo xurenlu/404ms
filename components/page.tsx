@@ -48,7 +48,7 @@ const Page = ({ children }: PageProps): JSX.Element => (
         })}
       </ul>
       <div className={styles.bottomInfo}>
-        <p className={styles.copyright}>&copy; Nickbing Lao {new Date().getFullYear()}</p>
+        <p className={styles.copyright}>&copy; renlu.xu {new Date().getFullYear()}</p>
         <img src="https://visitor-badge.glitch.me/badge?page_id=404.ms" alt="访问人数" />
       </div>
     </footer>
