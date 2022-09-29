@@ -19,8 +19,8 @@ async function generate() {
       const frontmatter = matter(content)
         const doc = frontmatter.data
         const y = `${new Date(doc.date).getFullYear()}`;
-        const m =  `${new Date(doc.date).getMonth() + 1}`;
-        const d =  `${new Date(doc.date).getDate()}`;
+        const m =  `${new Date(doc.date).getMonth() + 1}`.padStart(2,'0');
+        const d =  `${new Date(doc.date).getDate()}`.padStart(2,'0');
       feed.item({
         title: frontmatter.data.title,
         url: 'https://404.ms/' + y +'/' + m + '/' + d + '/' + name.replace(/\.md?/, ''),
