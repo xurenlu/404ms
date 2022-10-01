@@ -52,10 +52,10 @@ export async function getStaticProps() {
 
 const Home = (): JSX.Element => (
     <Page>
-        <PageHeader title="你好，欢迎来黄滚的主页 ！" description="我是一名全栈开发工程师, 这是我的个人网站">
-<Button href="/about">了解更多</Button>
+        <PageHeader title="Hey strangers. I am alex." description={<>I wrote articles about Vue/React,Golang,Java and some others. <br/>And daily life sometimes.</>}>
+<Button href="/about">for more</Button>
     </PageHeader>
-    <h2>个人项目</h2>
+    <h2>Open source projects</h2>
 {projects.map(project => (
     <Project key={project.title} {...project} />
 ))}

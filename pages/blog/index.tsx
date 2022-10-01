@@ -33,7 +33,7 @@ const Blog = ({ posts, tagList }: BlogProps): JSX.Element => {
     [],
   )
   const seoTitle = 'Blog | 404.ms '
-  const seoDesc = '主要是关于web开发的技术文章，包含且不限于 React、Angular、React Native、Golang、Java 等。\n也有不少关于人生、人性的感悟'
+  const seoDesc = 'Technical articles，about but not only React、Vue、Golang、Java、Ruby\nSometimes share my daily life.'
   const filteredPosts = posts
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .filter(({ title, summary, tags }) => {

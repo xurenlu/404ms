@@ -7,7 +7,7 @@ import styles from './header.module.scss'
 
 const links = [
   { name: 'Home', path: '/' ,target:""},
-  { name: 'Blog', path: '/blog' ,target:""},
+  { name: 'Posts', path: '/blog' ,target:""},
   { name: 'About', path: '/about' ,target:""},
 ]
 

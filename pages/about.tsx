@@ -24,20 +24,18 @@ const About = (): JSX.Element => {
           cardType: 'summary_large_image',
         }}
       />
-      <Image src={me} alt="Picture of me (Nickbing Lao)" placeholder="blur" className={styles.image} priority />
+      <Image src={me} alt="Picture of me " placeholder="blur" className={styles.image} priority />
       <div className={styles.text}>
         <p>Hey I’m alex , a fullstack developer currently living in 🇨🇳 Shanghai, China.</p>
 
         <p>
-            网页相关的开发工程师，后端熟悉java、php、golang、c、python、ruby，前端熟悉typescript编程，vue/react熟练工。
-            曾就职于CCTV、Yahoo!、Alibaba等企业，曾在Saas领域自主创业两次。
-            创业赔掉了百多万，负债中。
-            目前就职于上海某金融企业，往返杭州、上海两地。
+           I have been programming as my job since 2005 ,worked for Yahoo and Alibaba couple of years，and quit the dreamed full-time job to create a company and build my own products.<br/>
+            I program in multiple languages like ruby, php, python, java,golang,typescript,and be skilled designer with vue/react.<br/>
+            I joined a financial institutions at Shanghai at 2020, and enjoy my family time at weekend at Hangzhou.
+
         </p>
         <p>
-          对我感兴趣 (可查看{' '}
-
-          ).
+          more information
         </p>
         <p>
           <ul>
@@ -54,7 +52,7 @@ const About = (): JSX.Element => {
           </ul>
         </p>
       </div>
-      <Button href="mailto:next.blog@404.ms">联系我</Button>
+      <Button href="mailto:next.blog@404.ms">mail me</Button>
     </Page>
   )
 }
