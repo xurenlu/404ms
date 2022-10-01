@@ -22,14 +22,15 @@ export default class MyDocument extends Document {
           `,
             }}
           />
-          <meta name="google-site-verification" content="JPPz1wsoh_EhDrgTk6InHZrGEricNOa6zDJCTbIxe20" />
           <link rel="webmention" href="https://webmention.io/404.ms/webmention" />
           <link rel="pingback" href="https://webmention.io/404.ms/xmlrpc" />
-          <link href="https://github.com/giscafer" rel="me" />
+          <link href="https://github.com/xurenlu" rel="me" />
         </Head>
         <body>
           <Main />
           <NextScript />
+          <script  id="LA_COLLECT"
+                  src="//sdk.51.la/js-sdk-pro.min.js?id=Jpf9IpmETKtLtxbw&ck=Jpf9IpmETKtLtxbw&autoTrack=true&hashMode=true" async></script>
         </body>
       </Html>
     )
