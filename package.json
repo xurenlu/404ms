@@ -10,7 +10,9 @@
     "build": "next build",
     "start": "next start",
     "sync-post": "node ./scripts/sync-post.js",
-    "type-check": "./node_modules/.bin/tsc"
+    "type-check": "./node_modules/.bin/tsc",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@contentlayer/client": "^0.0.33",
@@ -50,10 +52,20 @@
     "yarn": "^1.22.17"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@storybook/addon-actions": "^6.5.14",
+    "@storybook/addon-essentials": "^6.5.14",
+    "@storybook/addon-interactions": "^6.5.14",
+    "@storybook/addon-links": "^6.5.14",
+    "@storybook/builder-webpack5": "^6.5.14",
+    "@storybook/manager-webpack5": "^6.5.14",
+    "@storybook/react": "^6.5.14",
+    "@storybook/testing-library": "^0.0.13",
     "@types/node": "^15.0.1",
     "@types/react": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "babel-loader": "^8.3.0",
     "eslint": "^7.25.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "^11.0.0",
