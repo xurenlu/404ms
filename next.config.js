@@ -1,6 +1,9 @@
 const { withContentlayer } = require('next-contentlayer') // eslint-disable-line
 
 module.exports = withContentlayer()({
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   webpack5: true,
   images: {
     domains: [
@@ -11,8 +14,8 @@ module.exports = withContentlayer()({
       'github.com',
       '404.ms',
       'ww1.sinaimg.cn',
-        'cdn.jsdelivr.net',
-        'unhtml.oss-cn-hongkong.aliyuncs.com'
+      'cdn.jsdelivr.net',
+      'unhtml.oss-cn-hongkong.aliyuncs.com',
     ],
     formats: ['image/avif', 'image/webp'],
   },
