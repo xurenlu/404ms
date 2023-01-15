@@ -10,11 +10,12 @@ type PageProps = {
 
 const footerLinks = [
   { name: 'Home', url: '/' },
-    { name: 'About', url: '/about' },
+  { name: 'About', url: '/about' },
   { name: 'Posts', url: '/blog' },
-    { name: 'GitHub', url: 'https://github.com/xurenlu', target: '_blank' },
+  { name: 'GitHub', url: 'https://github.com/xurenlu', target: '_blank' },
   { name: 'unhtml.com', url: 'https://unhtml.com', target: '_blank' },
-    { name: 'ip4.dev', url: 'https://ip4.dev', target: '_blank' },
+  { name: 'ip4.dev', url: 'https://ip4.dev', target: '_blank' },
+  { name: 'getniche', url: 'https://getniche.co', target: '_blank' },
   { name: 'RSS', url: '/feed.xml', target: '_blank' },
 ]
 
