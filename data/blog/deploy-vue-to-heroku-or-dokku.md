@@ -6,7 +6,9 @@ tags: ['nodejs', 'express']
 
 公司有一个前端项目，近期折腾了一下，改成从 heroku 的一个替代产品 dokku 部署了，记录一下过程。
 不熟悉 dokku 的可以看[这里](https://dokku.com/),是一个 heroku 的个人级替代产品，用法基本差不多。
+
 dokku 和 heroku 一样，只支持有后端的项目，所以对于 vue 项目，我们需要用 express 来提供服务。
+
 方案如下，先安装 express 和@suntower/serve-static2
 
 ```bash

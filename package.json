@@ -5,6 +5,11 @@
     "last 4 version",
     "not dead"
   ],
+  "engines": {
+    "node": "16.18.1",
+    "npm": "8.19.2",
+    "yarn": "1.22.10"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
