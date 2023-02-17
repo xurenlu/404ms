@@ -29,8 +29,8 @@ const About = (): JSX.Element => {
         <p>Hey I’m alex , a fullstack developer currently living in 🇨🇳 Shanghai, China.</p>
 
         <p>
-           I have been programming as my job since 2005 ,worked for Yahoo and Alibaba couple of years，and quit the dreamed full-time job to create a company and build my own products.<br/>
-            I program in multiple languages like ruby, php, python, java,golang,typescript,and be skilled designer with vue/react.<br/>
+        I have been programming as a job since 2005, worked for Yahoo and Alibaba for a couple of years，and quit the dream full-time job to start a company and build my own products.<br/>
+            I program in several languages like ruby, php, python, java, golang, typescript, and am a skilled designer with vue/react.<br/>
             I joined a financial institutions at Shanghai at 2020, and enjoy my family time at weekend at Hangzhou.
 
         </p>
@@ -47,6 +47,11 @@ const About = (): JSX.Element => {
             <li>
               <a href="https://twitter.com/162cm/" {...linkProps}>
                 Twitter
+              </a>
+            </li>
+            <li>
+              <a href="https://unhtml.github.io/" {...linkProps}>
+                some slides I wrote
               </a>
             </li>
           </ul>
