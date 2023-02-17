@@ -1,5 +1,6 @@
 # 404.ms
 
+
 我个人的 网站/博客。 技术栈 **Next.js/Typescript** & 部署在 **Vercel**。 博客数据来自 [issues 列表](https://github.com/xurenlu/404ms/issues)
 
 博客原理：通过 ci 监听 issues 变更，自动更新 mdx 文件到项目 `data/blog/*.mdx` 文件夹中，Vercel 自动化构建更新。
