@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { GetStaticProps, GetStaticPaths } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks' // eslint-disable-line
 import Head from 'next/head'
 import Link from 'next/link'
