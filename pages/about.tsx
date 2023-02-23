@@ -51,7 +51,7 @@ const About = (): JSX.Element => {
             </li>
             <li>
               <a href="https://unhtml.github.io/" {...linkProps}>
-                some slides I wrote
+                a few slides I wrote
               </a>
             </li>
           </ul>
