@@ -21,10 +21,11 @@ const issueInstance = gh.getIssues(GH_USER, GH_PROJECT_NAME)
 
 function generateMdx(issue) {
   const { title, labels, created_at, body, html_url } = issue
+  const the_date = created_at.replaceAll(/[a-zA-Z]/g,' ').trim()
   // todo: summary
   return `---
   title: ${title.trim()}
-  publishedAt: ${created_at}
+  publishedAt: ${the_date}
   summary: ${'查看全文>>'}
   tags: ${JSON.stringify(labels.map(item => item.name))}
 ---
