@@ -39,7 +39,7 @@ ${body.replace(/<br \/>/g, '\n')}
 function main() {
   const filePath = path.resolve(__dirname, blogOutputPath)
   // 只查询自己的issues，避免别人创建的也更新到博客
-  issueInstance.listIssues({ creator: 'xurenlu' }).then(({ data }) => {
+  issueInstance.listIssues({ creator: GH_USER }).then(({ data }) => {
     let successCount = 0
     fs.ensureDirSync(filePath)
     //fs.emptyDirSync(filePath)
@@ -53,8 +53,8 @@ function main() {
         const fileName = _.flatten(result).join('') */
         // 文件名换成issue number
         const fileName = `post-${item.number}`
-        fs.writeFileSync(`${filePath}/${fileName}.mdx`, content)
-        console.log(`${filePath}/${fileName}.mdx`, 'success')
+        fs.writeFileSync(`${filePath}/${fileName}.md`, content)
+        console.log(`${filePath}/${fileName}.md`, 'success')
         successCount++
       } catch (error) {
         console.log(error)
