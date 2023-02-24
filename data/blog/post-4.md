@@ -1,6 +1,6 @@
 ---
   title: 开始用github issues 来写blog
-  publishedAt: 2023-02-24 11:53:05
+  date: 2023-02-24 11:53:05
   summary: 查看全文>>
   tags: []
 ---
