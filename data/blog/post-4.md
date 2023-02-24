@@ -1,6 +1,6 @@
 ---
-  title: 测试2
-  publishedAt: 2023-02-24 11:40:26
+  title: 开始用github issues 来写blog
+  publishedAt: 2023-02-24 11:53:05
   summary: 查看全文>>
   tags: []
 ---
@@ -40,4 +40,4 @@ Add any other context about the problem here.
 
 ---
 
-欢迎前往原文讨论：[https://github.com/xurenlu/404ms/issues/3](https://github.com/xurenlu/404ms/issues/3)
+欢迎前往原文讨论：[https://github.com/xurenlu/404ms/issues/4](https://github.com/xurenlu/404ms/issues/4)
