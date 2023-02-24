@@ -42,7 +42,7 @@ function main() {
   issueInstance.listIssues({ creator: 'giscafer' }).then(({ data }) => {
     let successCount = 0
     fs.ensureDirSync(filePath)
-    fs.emptyDirSync(filePath)
+    //fs.emptyDirSync(filePath)
     for (const item of data) {
       try {
         const content = generateMdx(item)
