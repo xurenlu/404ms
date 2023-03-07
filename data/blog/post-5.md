@@ -12,7 +12,7 @@ Result window is too large, from + size must be less than or equal to:[10000] bu
 ```
 
 这个可以通过设置索引 的 max_result_window 来修改，但是不推荐，且这个方法只对新的索引生效。
-另一个办法是使用 scrolling：在查询的时候传入一个 scroll=\{time} ,time 参数 的格式像是 30m 这样,
+另一个办法是使用 scrolling：在查询的时候传入一个 scroll={time} ,time 参数 的格式像是 30m 这样,
 在结果返回中会带有一个\_scroll_id 字段，记录下这个值，然后请求 /\_search/scroll 即可。
 
 如下 ruby 代码演示了连接 elasticsearch 并按 from_id 查询导出的操作，新建对象并调用 start 方法即可。(示例中用到了 faraday 和 elasticsearch-dsl,需要 gem install elasticsearch-dsl faraday 一下)
