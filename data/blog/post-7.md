@@ -15,117 +15,114 @@ wysiwyg 控件，我选择的是 quill,https://quilljs.com/，请参考[这篇](
 
 最后完整的代码如下:
 
+```javascript
 import dynamic from 'next/dynamic'
 
 const QuillNoSSRWrapper = dynamic(import('react-quill'), {
-ssr: false,
-loading: () => <p>Loading ...</p>,
+  ssr: false,
+  loading: () => <p>Loading ...</p>,
 })
 
 const CustomToolbar = () => (
+  <div id="toolbar">
+    <span className="ql-formats">
+      <select className="ql-header" defaultValue="3">
+        <option value="1">Heading</option>
+        <option value="2">Subheading</option>
+        <option value="3">Normal</option>
+      </select>
+      <select className="ql-font" defaultValue="sailec">
+        <option value="sailec">Sailec Light</option>
+        <option value="sofia">Sofia Pro</option>
+        <option value="slabo">Slabo 27px</option>
+        <option value="roboto">Roboto Slab</option>
+        <option value="inconsolata">Inconsolata</option>
+        <option value="ubuntu">Ubuntu Mono</option>
+      </select>
+    </span>
+    <span className="ql-formats">
+      <button className="ql-bold"></button>
+      <button className="ql-italic"></button>
+      <button className="ql-underline"></button>
+    </span>
+    <span className="ql-formats">
+      <button className="ql-list" value="ordered"></button>
+      <button className="ql-list" value="bullet"></button>
+      <select className="ql-align" defaultValue="false">
+        <option label="left"></option>
+        <option label="center" value="center"></option>
+        <option label="right" value="right"></option>
+        <option label="justify" value="justify"></option>
+      </select>
+    </span>
+    <span className="ql-formats">
+      <button className="ql-link"></button>
 
-    <div id="toolbar">
-        <span className="ql-formats">
-                        <select className="ql-header" defaultValue="3">
-                          <option value="1">Heading</option>
-                          <option value="2">Subheading</option>
-                          <option value="3">Normal</option>
-                        </select>
-                        <select className="ql-font" defaultValue="sailec">
-                          <option value="sailec">Sailec Light</option>
-                          <option value="sofia">Sofia Pro</option>
-                          <option value="slabo">Slabo 27px</option>
-                          <option value="roboto">Roboto Slab</option>
-                          <option value="inconsolata">Inconsolata</option>
-                          <option value="ubuntu">Ubuntu Mono</option>
-                        </select>
-                      </span>
-        <span className="ql-formats">
-                        <button className="ql-bold"></button>
-                        <button className="ql-italic"></button>
-                        <button className="ql-underline"></button>
-                      </span>
-        <span className="ql-formats">
-                        <button className="ql-list" value="ordered"></button>
-                        <button className="ql-list" value="bullet"></button>
-                        <select className="ql-align" defaultValue="false">
-                          <option label="left"></option>
-                          <option label="center" value="center"></option>
-                          <option label="right" value="right"></option>
-                          <option label="justify" value="justify"></option>
-                        </select>
-                      </span>
-        <span className="ql-formats">
-                        <button className="ql-link"></button>
+      <button className="ql-video"></button>
+    </span>
+    <span className="ql-formats">
+      <button className="ql-formula"></button>
+      <button className="ql-code-block"></button>
+    </span>
+    <span className="ql-formats">
+      <button className="ql-clean"></button>
+    </span>
 
-                        <button className="ql-video"></button>
-                      </span>
-        <span className="ql-formats">
-                        <button className="ql-formula"></button>
-                        <button className="ql-code-block"></button>
-                      </span>
-        <span className="ql-formats">
-                        <button className="ql-clean"></button>
-                      </span>
-
-
-
-        <button className={"ql-image"}></button>
-    </div>
-
-);
+    <button className={'ql-image'}></button>
+  </div>
+)
 
 function insertImage() {
-const cursorPosition = this.quill.getSelection().index;
-window.cursorPosition = this.quill.getSelection().index;
+  const cursorPosition = this.quill.getSelection().index
+  window.cursorPosition = this.quill.getSelection().index
 
-    this.quill.insertText(cursorPosition, '');
-    this.quill.setSelection(cursorPosition + 1);
-    window.quill = this.quill;
-    setTimeout(()=>{
-        document.getElementsByClassName("rt-file-input")[0].click()
-    },200)
-
+  this.quill.insertText(cursorPosition, '')
+  this.quill.setSelection(cursorPosition + 1)
+  window.quill = this.quill
+  setTimeout(() => {
+    document.getElementsByClassName('rt-file-input')[0].click()
+  }, 200)
 }
 const modules = {
-toolbar: {
-container: '#toolbar',
-handlers: {
-image:insertImage
-},
-},
-};
+  toolbar: {
+    container: '#toolbar',
+    handlers: {
+      image: insertImage,
+    },
+  },
+}
 
 const formats = [
-'header',
-'font',
-'size',
-'bold',
-'italic',
-'underline',
-'strike',
-'blockquote',
-'list',
-'bullet',
-'indent',
-'link',
-'image',
-'video',
+  'header',
+  'font',
+  'size',
+  'bold',
+  'italic',
+  'underline',
+  'strike',
+  'blockquote',
+  'list',
+  'bullet',
+  'indent',
+  'link',
+  'image',
+  'video',
 ]
 export default function QuillEditor() {
-const onUpload =(file)=>{
-window.quill.clipboard.dangerouslyPasteHTML(window.cursorPosition,"<img src='"+file.data+"'/>")
-
-    }
-    return <>
-        <CustomToolbar />
-        <QuillNoSSRWrapper modules={modules} formats={formats} theme="snow"/>
-        <Upload action={"/api/item/upload"} onSuccess={onUpload} id={"uploader"} className={"xup-uploader"}>
-            <button className="ql-image"></button>
-        </Upload>
-        </>
-
+  const onUpload = file => {
+    window.quill.clipboard.dangerouslyPasteHTML(window.cursorPosition, "<img src='" + file.data + "'/>")
+  }
+  return (
+    <>
+      <CustomToolbar />
+      <QuillNoSSRWrapper modules={modules} formats={formats} theme="snow" />
+      <Upload action={'/api/item/upload'} onSuccess={onUpload} id={'uploader'} className={'xup-uploader'}>
+        <button className="ql-image"></button>
+      </Upload>
+    </>
+  )
 }
+```
 
 ---
 
