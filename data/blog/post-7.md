@@ -15,6 +15,7 @@ wysiwyg 控件，我选择的是 quill,https://quilljs.com/，请参考[这篇](
 
 最后完整的代码如下:
 
+```javascript
 import dynamic from 'next/dynamic'
 
 const QuillNoSSRWrapper = dynamic(import('react-quill'), {
@@ -126,6 +127,8 @@ window.quill.clipboard.dangerouslyPasteHTML(window.cursorPosition,"<img src='"+f
         </>
 
 }
+
+```
 
 ---
 
