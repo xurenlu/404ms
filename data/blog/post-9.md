@@ -1,5 +1,5 @@
 ---
-  title: Apache Drill: 一个强大的数据分析工具
+  title: Apache Drill  一个强大的数据分析工具
   date: 2023-03-09 15:19:52
   summary: 查看全文>>
   tags: []
