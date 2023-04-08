@@ -24,7 +24,7 @@ bundle install
 bundle exec crono start
 ```
 
-2. cron -e,添加了个定时任务，{redirect.web.1} 是你 docker 容器的名字，根据自己的需要修改:
+2. cron -e,添加了个定时任务，redirect.web.1 是你 docker 容器的名字，根据自己的需要修改:
 
 - - - - - docker exec -u herokuishuser redirect.web.1 /app/run.sh
 
