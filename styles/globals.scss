@@ -21,6 +21,23 @@
   src: url('/fonts/GTWalsheimPro-Bold.woff2') format('woff2');
   font-display: optional;
 }
+@media (prefers-color-scheme: dark) {
+  .mac-top-bar {
+    display: none;
+  }
+  /* 在这里添加只针对暗黑模式下生效的CSS规则 */
+}
+
+
+.mac-top-bar {
+  background-color: rgb(60,60,60);
+  border-radius: 8px 8px 0 0;
+  height:32px;
+  padding-left:10px;
+}
+pre[class*='language-'] {
+  margin-top:0 !important;
+}
 
 :root {
   --bg: #fff;

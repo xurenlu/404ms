@@ -6,6 +6,11 @@
 }
 
 .article {
+  img {
+    border-radius: 8px;
+    box-shadow: 6px 6px  var(--boxBg);
+    margin: 1em auto;
+  }
   margin-bottom: 40px;
   overflow: hidden;
   color: var(--text);
@@ -78,7 +83,7 @@
     padding: 20px 25px;
     overflow: auto;
     font-weight: 500;
-    border-radius: 5px;
+    border-radius: 0;
   }
 
   blockquote {

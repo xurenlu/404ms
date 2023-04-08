@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 import dynamic from 'next/dynamic'
+import { useTheme } from 'next-themes'
 
 // Components
 import Page from 'components/page'
@@ -31,6 +32,8 @@ import { allPosts } from '.contentlayer/data'
 import type { Post as PostType } from '.contentlayer/types'
 
 import styles from '../../../blog/post.module.scss'
+import {useEffect} from "react";
+
 
 const ParallaxCover = dynamic(() => import('components/blog/parallaxcover'))
 
@@ -78,6 +81,67 @@ type PostProps = {
 const Post = ({ post, related }: PostProps): JSX.Element => {
   const Component = useMDXComponent(post.body.code)
 
+    const styleRed = "width: 18;\n" +
+        "    height: var(--sizes-5);\n" +
+        "    display: inline-block;\n" +
+        "    line-height: 1em;\n" +
+        "    -webkit-flex-shrink: 0;\n" +
+        "    -ms-flex-negative: 0;\n" +
+        "    flex-shrink: 0;\n" +
+        "    color: rgb(237,106,93);\n" +
+        "    vertical-align: middle;\n" +
+        "}";
+    const styleYellow = "width: 18;" +
+        "    height: var(--sizes-5);" +
+        "    display: inline-block;" +
+        "    line-height: 1em;" +
+        "    -webkit-flex-shrink: 0;" +
+        "    -ms-flex-negative: 0;" +
+        "    flex-shrink: 0;" +
+        "    color: rgb(244,191,79);" +
+        "    vertical-align: middle;";
+    const styleGreen = "    width: 18;\n" +
+        "    height: var(--sizes-5);\n" +
+        "    display: inline-block;\n" +
+        "    line-height: 1em;\n" +
+        "    -webkit-flex-shrink: 0;\n" +
+        "    -ms-flex-negative: 0;\n" +
+        "    flex-shrink: 0;\n" +
+        "    color: rgb(97,197,84);\n" +
+        "    vertical-align: middle;"
+    const createNewMacNode = function () {
+        //let node = document.createElement("")
+        let newNode = document.createElement("div");
+        newNode.classList.add("mac-top-bar", "pl-4", "text-left", "pt-1");
+        newNode.innerHTML = '<svg viewBox="0 0 200 200" focusable="false" class="chakra-icon " style="' + styleRed + '"><path fill="currentColor" d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"></path>'
+            + '</svg><svg viewBox="0 0 200 200" focusable="false" class="chakra-icon " style="' + styleYellow + '"><path fill="currentColor" d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"></path></svg>'
+            + '<svg viewBox="0 0 200 200" focusable="false" class="chakra-icon" style="' + styleGreen + '"><path fill="currentColor" d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"></path></svg>';
+        return newNode;
+    }
+    const { setTheme, theme } = useTheme()
+    const insertMacBar = function () {
+        console.log(theme)
+        //@ts-ignore
+
+        setTimeout(()=>{
+            try {
+                if ( theme != "light") {
+                    const nodes = document.getElementsByTagName("pre")
+                    for(let item of nodes){
+                        if (!item.classList.contains("language-mermaid")) {
+                            if(item.classList.value&& (item.classList.value.indexOf("language-")>-1) ) {
+                                item.parentNode.insertBefore(createNewMacNode(), item);
+                            }
+                        }
+                    }
+
+                }
+            }catch(e){
+                console.log(e)
+            }
+        },300)
+    }
+
   const formattedPublishDate = new Date(post.date).toLocaleString('zh-CN', {
     month: 'short',
     day: '2-digit',
@@ -95,6 +159,9 @@ const Post = ({ post, related }: PostProps): JSX.Element => {
   const seoDesc = `${post.summary}`
   const url = `https://404.ms/${post.y}/${post.m}/${post.d}/${post.slug}`
 
+  useEffect(() => {
+    insertMacBar();
+  }, [])
   return (
     <Page>
       <NextSeo
